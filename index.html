@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PromptForge AI</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+        href="{{ url_for('static',filename='css/styles.css') }}">
+
+    <link rel="stylesheet"
+        href="{{ url_for('static',filename='css/animations.css') }}">
+
+</head>
+
+<body>
+
+<div class="background-grid"></div>
+
+<div class="app">
+
+    <!-- ================= Sidebar ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-circle">
+
+                <i class="fa-solid fa-brain"></i>
+
+            </div>
+
+            <div>
+
+                <h2>PromptForge</h2>
+
+                <p>AI Assistant</p>
+
+            </div>
+
+        </div>
+
+        <nav>
+
+            <button class="menu active">
+
+                <i class="fa-solid fa-comments"></i>
+
+                Ask AI
+
+            </button>
+
+            <button class="menu">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                Summarizer
+
+            </button>
+
+            <button class="menu">
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                Prompt Improver
+
+            </button>
+
+            <button class="menu">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                Prompt Analyzer
+
+            </button>
+
+            <button class="menu">
+
+                <i class="fa-solid fa-book-open"></i>
+
+                Story Generator
+
+            </button>
+
+        </nav>
+
+    </aside>
+
+    <!-- ================= Main ================= -->
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>PromptForge AI</h1>
+
+                <p>Your Prompt Engineering Companion</p>
+
+            </div>
+
+            <div class="top-buttons">
+
+            <button onclick="downloadChat()">
+
+            <i class="fa-solid fa-download"></i>
+                
+            </button>
+
+            <button onclick="clearChat()">
+
+            <i class="fa-solid fa-trash"></i>
+
+            </button>
+
+            <button onclick="startVoice()">
+
+            <i class="fa-solid fa-microphone"></i>
+
+            </button>
+
+            <button class="theme-btn">
+
+            <i class="fa-solid fa-moon"></i>
+
+            </button>
+
+            </div>
+
+        </header>
+
+        <!-- Chat -->
+
+        <section class="chat-area" id="chatArea">
+
+            <div class="message ai">
+
+                <div class="avatar ai-avatar">
+
+                    <i class="fa-solid fa-robot"></i>
+
+                </div>
+
+                <div class="bubble">
+
+                    👋 Welcome to <strong>PromptForge AI</strong>
+
+                    <br><br>
+
+                    Ask a question, summarize text, improve prompts, or generate creative content.
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Input -->
+
+        <section class="input-panel">
+
+            <div class="feature-row">
+
+                <select id="feature">
+
+                    <option value="qa">Ask AI</option>
+
+                    <option value="summary">Summarize</option>
+
+                    <option value="prompt">Improve Prompt</option>
+
+                    <!-- <option value="analyze">Analyze Prompt</option> -->
+
+                    <option value="story">Story Generator</option>
+
+                </select>
+
+            </div>
+
+            <div class="input-row">
+
+                <textarea
+                    id="userInput"
+                    placeholder="Type your prompt here..."></textarea>
+
+                <button id="generateBtn">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ================= Right Panel ================= -->
+
+    <aside class="right-panel">
+
+        <div class="orb-container">
+
+            <div class="orb"></div>
+
+        </div>
+
+        <h3>AI Status</h3>
+
+        <p id="statusText">
+
+            Ready
+
+        </p>
+
+        <div class="stats">
+
+            <div class="card">
+
+                <h4>Features</h4>
+
+                <span>5</span>
+
+            </div>
+
+            <div class="card">
+
+                <h4>Model</h4>
+
+                <span>Gemini</span>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+</div>
+
+<script src="{{ url_for('static',filename='js/script.js') }}"></script>
+
+<script src="{{ url_for('static',filename='js/ui.js') }}"></script>
+
+</body>
+
+</html>
